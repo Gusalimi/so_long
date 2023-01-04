@@ -6,7 +6,7 @@
 /*   By: gsaile <gsaile@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 14:47:24 by gsaile            #+#    #+#             */
-/*   Updated: 2022/12/05 13:48:13 by gsaile           ###   ########.fr       */
+/*   Updated: 2023/01/04 14:00:27 by gsaile           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ t_data	*init_data(char *filename)
 		error_exit("Failed to initialize game1", NULL);
 	null_data(&data);
 	data->map = get_map(filename, data);
+	mlx_set_setting(MLX_STRETCH_IMAGE, true);
 	data->mlx = mlx_init(data->map->len_x * 64, data->map->len_y * 64 + 30,
 			"so long", true);
 	if (data->mlx == NULL)
